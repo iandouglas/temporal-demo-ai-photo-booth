@@ -1,0 +1,18 @@
+node_modules/
+dist/
+.venv/
+__pycache__/
+*.pyc
+.env
+tmp/
+data/
+.DS_Store
+
+# Rendered Jukebox audio (large; host on S3/CloudFront, not git)
+jukebox-songs/**/*.mp3
+jukebox-songs/**/*.wav
+jukebox-songs/renders.jsonl
+jukebox-songs/checks.jsonl
+
+.env.*
+!.env.example

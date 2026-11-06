@@ -1,0 +1,121 @@
+/*
+ * Spaceship touchpad theme (LCARS-inspired, our own design).
+ * Tokens are exposed as Tailwind colors: bg-lc-orange, text-lc-gold, etc.
+ * Source of truth: shared/ship-ui (vendored into each demo by sync.sh).
+ */
+/*
+ * Shared text-size multiplier. Every demo multiplies its root font-size by
+ * var(--ship-type). The booth TVs (stacked layout: 75" portrait, viewed from a
+ * few feet, inside a 5-6" animated border) need less jumbo lettering than the
+ * raw viewport math gives, so stacked defaults to 0.82. Tune here for all demos,
+ * or per screen with ?textscale=0.75.
+ */
+:root { --ship-type: 1; }
+:root[data-layout="stacked"] { --ship-type: 0.82; }
+
+@theme {
+  --font-lcars: "Antonio", "Arial Narrow", system-ui, sans-serif;
+
+  --color-lc-void: #000000;
+  --color-lc-hull: #0a0812;
+  --color-lc-panel: #141024;
+  --color-lc-panel-hi: #1e1834;
+  --color-lc-line: #2c2448;
+
+  --color-lc-orange: #ff9c38;
+  --color-lc-peach: #ffbb88;
+  --color-lc-gold: #ffcc66;
+  --color-lc-lavender: #cc99ff;
+  --color-lc-violet: #9977ff;
+  --color-lc-blue: #88aaff;
+  --color-lc-sky: #66ccff;
+  --color-lc-green: #66dd99;
+  --color-lc-red: #ff5555;
+  --color-lc-rose: #ff8899;
+
+  --color-lc-text: #f5e9dc;
+  --color-lc-dim: #9a8fb0;
+  --color-lc-faint: #5e5578;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-lc-void);
+  /* Faint starfield */
+  background-image:
+    radial-gradient(1px 1px at 12% 18%, #ffffff55 50%, transparent 51%),
+    radial-gradient(1px 1px at 68% 32%, #ffffff44 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 42% 76%, #ffffff33 50%, transparent 51%),
+    radial-gradient(1px 1px at 88% 64%, #ffffff44 50%, transparent 51%),
+    radial-gradient(1px 1px at 24% 52%, #ffffff33 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 78% 88%, #ffffff33 50%, transparent 51%);
+  background-size: 480px 480px;
+  color: var(--color-lc-text);
+  font-family: system-ui, -apple-system, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+@layer components {
+  /* Condensed, uppercase control-panel lettering */
+  .lc-label {
+    font-family: var(--font-lcars);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* Pill button: the basic touch control */
+  .lc-btn {
+    font-family: var(--font-lcars);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    min-height: 48px;
+    padding: 0 1.25rem;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--color-lc-void);
+    background: var(--color-lc-orange);
+    transition: filter 150ms, transform 100ms;
+  }
+  .lc-btn:hover { filter: brightness(1.12); }
+  .lc-btn:active { transform: scale(0.97); }
+  .lc-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  /* Horizontal header bar with a rounded left cap */
+  .lc-bar {
+    font-family: var(--font-lcars);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border-radius: 9999px 0 0 9999px;
+  }
+
+  /* Blinking text caret for on-screen keyboard fields */
+  .lc-caret {
+    display: inline-block;
+    width: 3px;
+    height: 1.1em;
+    margin-left: 2px;
+    background: var(--color-lc-orange);
+    vertical-align: middle;
+    animation: lc-blink 1s steps(1) infinite;
+  }
+
+  /* Panel with a thin frame */
+  .lc-card {
+    background: var(--color-lc-panel);
+    border: 1px solid var(--color-lc-line);
+    border-radius: 14px;
+  }
+}
+
+@keyframes lc-blink {
+  50% { opacity: 0; }
+}

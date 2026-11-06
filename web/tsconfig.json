@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "skipLibCheck": true,
+    "types": ["vite/client"]
+  },
+  "include": ["src", "vite.config.ts"],
+  // The vendored ship-ui is React; the Holodeck imports only its framework-free
+  // lib files (booth config, nav, Ziggy), which are still checked through the imports.
+  "exclude": ["src/ship-ui"]
+}
