@@ -8,7 +8,7 @@ These instructions cover this fork. This work is only for AWS re:Invent 2026. Co
 - Start every change on a feature branch from the latest `mine/reinvent-2026-donotmerge`. Use a name such as `codex/theme-<topic>` or `claude/theme-<topic>`.
 - Never commit work directly to `main` or `reinvent-2026-donotmerge`.
 - Before editing, inspect `git status` and preserve all existing work. Do not reset, clean or delete someone else's changes.
-- Push the feature branch to **iandouglas/photo-booth**. Open its PR in **iandouglas/photo-booth**, targeting **reinvent-2026-donotmerge**.
+- Push the feature branch to **iandouglas/temporal-demo-ai-photo-booth**. Open its PR in **iandouglas/temporal-demo-ai-photo-booth**, targeting **reinvent-2026-donotmerge**.
 - Name the PR repository explicitly. Do not let GitHub default a fork PR to the upstream repository. Do not open this work against temporal-sa, temporal-community or temporalio.
 - Never merge. Ian reviews and merges on GitHub.
 - Use concise plain ASCII commit/PR text. Do not add co-author trailers or AI attribution.
@@ -17,7 +17,7 @@ Example, after making and committing changes on your feature branch:
 
 ```bash
 git push -u mine YOUR_FEATURE_BRANCH
-gh pr create --repo iandouglas/photo-booth --base reinvent-2026-donotmerge --head YOUR_FEATURE_BRANCH
+gh pr create --repo iandouglas/temporal-demo-ai-photo-booth --base reinvent-2026-donotmerge --head YOUR_FEATURE_BRANCH
 ```
 
 ## Skinning and Theming
