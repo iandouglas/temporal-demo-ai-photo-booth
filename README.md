@@ -1,6 +1,6 @@
 # Photo Booth
 
-These updates are only for AWS re:Invent 2026. Do not merge this branch into the default branch. Contact Ian Douglas or Tomas Josovsky with questions.
+These updates are only for AWS re:Invent 2026. This repository's main branch is the re:Invent demo version. Contact Ian Douglas or Tomas Josovsky with questions.
 
 [Runbook](RUNBOOK.md) | [Source](SOURCE.md)
 

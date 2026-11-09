@@ -1,6 +1,6 @@
 # Photo Booth Runbook
 
-These updates are only for AWS re:Invent 2026. Do not merge this branch into the default branch. Contact Ian Douglas or Tomas Josovsky with questions.
+These updates are only for AWS re:Invent 2026. This repository's main branch is the re:Invent demo version. Contact Ian Douglas or Tomas Josovsky with questions.
 
 [Setup](#standalone-setup) | [Walkthrough](#walkthrough) | [Tests](#tests) | [Source](SOURCE.md)
 
@@ -69,7 +69,7 @@ Stop only the processes started in the terminals above, using Ctrl-C. Preserve `
 
 ## re:Invent 2026 Booth Setup
 
-These updates are only for AWS re:Invent 2026. Do not merge this branch into the default branch. Contact Ian Douglas or Tomas Josovsky with questions.
+These updates are only for AWS re:Invent 2026. This repository's main branch is the re:Invent demo version. Contact Ian Douglas or Tomas Josovsky with questions.
 
 The laptop bundle uses this demo's source instructions with a separate UI port and a laptop-specific task queue. From the parent `new-demos/` folder, run `./bundle-setup.sh --only photo-booth` and `python3 bundle.py panel`, then start **Photo Booth** in [Config](http://127.0.0.1:5199/config). UI: [localhost:5620](http://127.0.0.1:5620/).
 
